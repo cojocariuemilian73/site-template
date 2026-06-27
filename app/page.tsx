@@ -69,8 +69,8 @@ export default function HomePage() {
               className="group relative block h-full min-h-[420px] overflow-hidden rounded-2xl border border-border-subtle transition-colors hover:border-border-accent"
             >
               <Image
-                src="/images/images.jpg"
-                alt="Echipa ProliDent Clinic — apasă pentru programare"
+                src="/images/importanta-profilaxiei-dentare.jpg"
+                alt="Tratament stomatologic ProliDent Clinic — apasă pentru programare"
                 fill
                 className="object-cover transition-opacity duration-300 group-hover:opacity-90"
                 sizes="(min-width: 1024px) 50vw, 100vw"
