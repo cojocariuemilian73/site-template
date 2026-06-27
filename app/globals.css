@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --border-subtle: rgba(139, 115, 85, 0.2);
+  --border-accent: rgba(139, 115, 85, 0.5);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #1a1510;
+  color: #f0ede6;
+}
+
+/* ===== Custom scrollbar ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #242018;
+}
+::-webkit-scrollbar-thumb {
+  background: #8b7355;
+  border-radius: 3px;
+}
+
+/* ===== Dark / auriu card style ===== */
+.glass-card {
+  background: #242018;
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--border-accent);
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.55);
+}
+
+/* ===== Nav link underline ===== */
+.nav-link-glow {
+  position: relative;
+}
+.nav-link-glow::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #8b7355;
+  transition: width 0.25s ease;
+}
+.nav-link-glow:hover::after,
+.nav-link-glow[data-active="true"]::after {
+  width: 100%;
+}
+
+/* ===== Gradient text (auriu) ===== */
+.gradient-text {
+  background: linear-gradient(90deg, #8b7355, #c4a882);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ===== Typewriter caret ===== */
+.typewriter-caret::after {
+  content: "|";
+  margin-left: 2px;
+  animation: blink-caret 0.9s step-end infinite;
+  color: #2c5f5d;
+}
+@keyframes blink-caret {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+/* ===== Reduced motion ===== */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
